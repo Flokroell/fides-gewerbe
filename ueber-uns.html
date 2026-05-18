@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Über uns – fides GmbH, Versicherungs­makler in Schongau</title>
+<meta name="description" content="Inhabergeführter Versicherungsmakler in Schongau. Das Team rund um Stefan und Marvin Feyerabend betreut Gewerbekunden in Bayern."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"/>
+<link rel="stylesheet" href="shared/styles.css"/>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="shared/components.jsx"></script>
+
+<script type="text/babel" data-presets="react">
+const { Icon, I, Header, Footer, CTAStrip } = window.fides;
+
+const leadership = [
+  { name: "Stefan Feyerabend", role: "Geschäftsführer", qual: "Finanzfachwirt (FH)", lead: true },
+  { name: "Marvin Feyerabend", role: "Geschäftsführer", qual: "Versicherungsfachmann IHK · Immobilienmakler IHK", lead: true },
+];
+const team = [
+  { name: "Janine Westbomke", role: "Innendienstleiterin", qual: "Versicherungskauffrau IHK" },
+  { name: "Simone Backes", role: "Versicherungsmaklerin", qual: "Versicherungsfachwirtin IHK" },
+  { name: "Lena Weindl", role: "Vertriebsassistentin", qual: "Versicherungsfachfrau IHK" },
+  { name: "Andreas Welzmiller", role: "Versicherungsmakler", qual: "Versicherungsfachmann IHK" },
+  { name: "Manuel Suder", role: "Versicherungsmakler", qual: "Versicherungsfachmann IHK" },
+  { name: "Andreas Ikier", role: "Versicherungsmakler", qual: "Versicherungsfachmann IHK" },
+  { name: "Thomas Weiß", role: "Versicherungsmakler", qual: "Versicherungsfachmann IHK" },
+];
+
+const initials = (n) => n.split(" ").map(p => p[0]).slice(0,2).join("");
+
+function Page() {
+  return (
+    <>
+      <Header active="ueber"/>
+
+      <section className="hero hero--page">
+        <div className="hero__bg"></div>
+        <div className="container hero__inner">
+          <span className="eyebrow" style={{color: "#C8DCA0"}}>Über uns</span>
+          <h1 style={{textWrap: "balance"}}>Versicherungsmakler aus Überzeugung – im Pfaffenwinkel zu Hause.</h1>
+          <p className="lead">
+            fides ist ein inhabergeführtes Maklerbüro in Schongau. Wir betreuen Handwerk, Gastronomie,
+            Dienstleister und Einzelhandel in Bayern – unabhängig, langfristig und mit einem Team,
+            das sowohl die Region als auch den Versicherungsmarkt seit Jahren kennt.
+          </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="section-head section-head--left">
+            <span className="eyebrow">Geschäftsführung</span>
+            <h2>Inhabergeführt von Stefan und Marvin Feyerabend.</h2>
+          </div>
+          <div className="team-grid" style={{gridTemplateColumns: "repeat(2, 1fr)"}}>
+            {leadership.map(p => (
+              <div key={p.name} className="person person--lead">
+                <div className="person__avatar">{initials(p.name)}</div>
+                <h4>{p.name}</h4>
+                <div className="role">{p.role}</div>
+                <div className="qual">{p.qual}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--alt">
+        <div className="container">
+          <div className="section-head section-head--left">
+            <span className="eyebrow">Das Team</span>
+            <h2>Innen- und Außendienst, der Sie wirklich kennt.</h2>
+            <p>Vom Erstgespräch bis zur Schadenabwicklung haben Sie bei fides feste Ansprechpartner.
+              Das gesamte Team verfügt über anerkannte IHK-Abschlüsse im Versicherungswesen.</p>
+          </div>
+          <div className="team-grid">
+            {team.map(p => (
+              <div key={p.name} className="person">
+                <div className="person__avatar">{initials(p.name)}</div>
+                <h4>{p.name}</h4>
+                <div className="role">{p.role}</div>
+                <div className="qual">{p.qual}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow">Warum fides</span>
+            <h2>Was Sie als Gewerbekunde von uns erwarten dürfen.</h2>
+          </div>
+          <div className="why-grid">
+            <div className="card why">
+              <span className="ico-wrap"><Icon path={I.scale} strokeWidth={1.6}/></span>
+              <h3>Echter Makler­status</h3>
+              <p className="muted" style={{margin: 0}}>
+                Wir sind nach § 34d GewO als Versicherungsmakler zugelassen und arbeiten
+                im Auftrag unserer Kundinnen und Kunden – nicht im Auftrag einer einzelnen
+                Versicherungsgesellschaft.
+              </p>
+            </div>
+            <div className="card why">
+              <span className="ico-wrap"><Icon path={I.mapPin} strokeWidth={1.6}/></span>
+              <h3>Region & Persönlichkeit</h3>
+              <p className="muted" style={{margin: 0}}>
+                Unser Büro in Schongau ist persönlich erreichbar. Termine vor Ort, im Betrieb
+                oder per Video – Sie entscheiden, wie wir am besten zusammenarbeiten.
+              </p>
+            </div>
+            <div className="card why">
+              <span className="ico-wrap"><Icon path={I.shield} strokeWidth={1.6}/></span>
+              <h3>Begleitung im Schadenfall</h3>
+              <p className="muted" style={{margin: 0}}>
+                Wenn es darauf ankommt, übernehmen wir die Kommunikation mit dem Versicherer –
+                bis die Regulierung steht. Das ist für uns kein Zusatz, sondern Teil unserer Aufgabe.
+              </p>
+            </div>
+            <div className="card why">
+              <span className="ico-wrap"><Icon path={I.spark} strokeWidth={1.6}/></span>
+              <h3>Moderne Prozesse</h3>
+              <p className="muted" style={{margin: 0}}>
+                Mit dem digitalen Schnellcheck verkürzen wir die Vorqualifizierung auf 60 Sekunden.
+                So bleibt mehr Zeit für das, was wirklich zählt: das persönliche Gespräch.
+              </p>
+            </div>
+            <div className="card why">
+              <span className="ico-wrap"><Icon path={I.users} strokeWidth={1.6}/></span>
+              <h3>Eingespieltes Team</h3>
+              <p className="muted" style={{margin: 0}}>
+                Innendienst und Außendienst arbeiten Hand in Hand. Sie haben einen Hauptansprech­partner,
+                aber im Hintergrund ein gesamtes Team, das Ihre Verträge kennt.
+              </p>
+            </div>
+            <div className="card why">
+              <span className="ico-wrap"><Icon path={I.globe} strokeWidth={1.6}/></span>
+              <h3>Schwesterbetrieb für Privates</h3>
+              <p className="muted" style={{margin: 0}}>
+                Über <a href="https://fides-finanz.de" target="_blank" rel="noopener">fides-finanz.de</a>
+                {" "}betreuen wir auch Ihre privaten Themen – Vorsorge, Altersversorgung, Finanzierung.
+                Beides aus einer Hand, sauber getrennt geführt.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <CTAStrip/>
+      <Footer/>
+    </>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<Page/>);
+</script>
+</body>
+</html>

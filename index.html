@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>fides GmbH – Versicherungsmakler für Gewerbe in Schongau</title>
+<meta name="description" content="Unabhängiger Versicherungsmakler für Handwerk, Gastronomie, Dienstleister und Einzelhandel in Schongau und Landsberg am Lech. Schnellcheck in 60 Sekunden."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"/>
+<link rel="stylesheet" href="shared/styles.css"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [{
+    "@type": ["LocalBusiness", "InsuranceAgency"],
+    "@id": "https://fides-gewerbe.de/#business",
+    "name": "fides GmbH",
+    "description": "Unabhängiger Versicherungsmakler für Gewerbekunden in Schongau und Landsberg am Lech.",
+    "url": "https://fides-gewerbe.de",
+    "sameAs": ["https://fides-finanz.de"],
+    "telephone": "+4988616995681",
+    "email": "info@fides-finanz.de",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Karwendelring 2",
+      "addressLocality": "Schongau",
+      "postalCode": "86956",
+      "addressCountry": "DE"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 47.8127, "longitude": 10.8998 },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "09:00", "closes": "17:00"
+    }],
+    "areaServed": [
+      { "@type": "City", "name": "Schongau" },
+      { "@type": "City", "name": "Landsberg am Lech" }
+    ],
+    "serviceType": ["Betriebshaftpflicht","Betriebliche Krankenversicherung","Berufshaftpflicht"]
+  }]
+}
+</script>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="shared/components.jsx"></script>
+
+<script type="text/babel" data-presets="react">
+const { Icon, I, Header, Footer, TrustBar, ServiceCard, SchnellcheckSection, CTAStrip } = window.fides;
+
+function Hero() {
+  return (
+    <section className="hero">
+      <div className="hero__bg"></div>
+      <div className="hero__inner">
+        <div className="hero__copy">
+          <div className="hero__tag">UNABHÄNGIG · LOKAL · MARKT&shy;VERGLEICH</div>
+          <h1>
+            Ihr <span className="accent">unabhängiger</span> Versicherungs­makler für Gewerbe.
+          </h1>
+          <p className="lead">
+            Wir vergleichen den gesamten Markt für Handwerk, Gastronomie, Dienstleister
+            und Einzelhandel – und finden den Schutz, der wirklich zu Ihrem Betrieb passt.
+          </p>
+          <div className="hero__cta">
+            <a href="#schnellcheck" className="btn btn--primary btn--lg">
+              Schnellcheck starten <Icon path={I.arrowRight} size={18} strokeWidth={2}/>
+            </a>
+            <a href="betriebshaftpflicht.html" className="btn btn--ghost btn--lg">
+              Leistungen entdecken
+            </a>
+          </div>
+        </div>
+
+        <div className="hero__accent" aria-hidden="true">
+          <div className="hero__card hero__card--service">
+            <span className="ico"><Icon path={I.shield} strokeWidth={1.7}/></span>
+            <div className="copy">
+              <strong>Marktvergleich</strong>
+              <span>100+ Versicherer geprüft</span>
+            </div>
+          </div>
+
+          <div className="hero__card hero__card--review">
+            <div className="avatar">SF</div>
+            <div className="meta">
+              <strong>Referenz wird ergänzt</strong>
+              <span>Handwerk · Pfaffenwinkel</span>
+              <div className="stars">★★★★★</div>
+            </div>
+          </div>
+
+          <div className="hero__card hero__card--badge">
+            <div className="num">100%</div>
+            <div className="label">Unabhängig</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Services() {
+  return (
+    <section className="section">
+      <div className="container">
+        <div className="section-head">
+          <span className="eyebrow">Unsere Leistungen</span>
+          <h2>Drei Bausteine, mit denen Ihr Betrieb richtig abgesichert ist.</h2>
+          <p>Wir konzentrieren uns auf die Versicherungen, die für Gewerbekunden den Unterschied machen – und sagen offen, wenn ein Baustein für Sie nicht nötig ist.</p>
+        </div>
+        <div className="service-grid">
+          <ServiceCard href="betriebshaftpflicht.html" icon={I.shield}
+            title="Betriebshaftpflicht"
+            body="Schützt Ihren Betrieb vor finanziellen Folgen, wenn Dritte zu Schaden kommen – Personen, Sachen oder Vermögen."/>
+          <ServiceCard href="betriebliche-krankenversicherung.html" icon={I.heart}
+            title="Betriebliche Krankenversicherung"
+            body="Ein steuerlich attraktiver Gesundheits-Benefit, mit dem Sie qualifizierte Mitarbeitende gewinnen und langfristig binden."/>
+          <ServiceCard href="berufshaftpflicht.html" icon={I.briefcase}
+            title="Berufshaftpflicht"
+            body="Pflicht für viele Beratungs- und Planungsberufe – sie deckt reine Vermögensschäden aus Ihrer beruflichen Tätigkeit ab."/>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Testimonials() {
+  const slots = [
+    "Handwerksbetrieb · Pfaffenwinkel",
+    "Gastronomie · Landsberg am Lech",
+    "Dienstleistung · Schongau",
+  ];
+  return (
+    <section className="section section--alt">
+      <div className="container">
+        <div className="section-head">
+          <span className="eyebrow">Stimmen unserer Kunden</span>
+          <h2>Was Gewerbekunden über uns sagen.</h2>
+        </div>
+        <div className="testimonial-grid">
+          {slots.map((label, i) => (
+            <div className="testi" key={i}>
+              <div className="testi__mark">“</div>
+              <p className="testi__placeholder">Referenz wird von Stefan Feyerabend ergänzt.</p>
+              <div className="testi__source">{label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TeamTeaser() {
+  return (
+    <section className="section">
+      <div className="container">
+        <div className="team-teaser">
+          <div>
+            <span className="eyebrow">Über uns</span>
+            <h2>Inhabergeführt. Lokal. Seit Jahren im Pfaffenwinkel.</h2>
+            <p className="muted" style={{fontSize: "1.0625rem"}}>
+              Geführt von Stefan und Marvin Feyerabend betreut fides Gewerbekunden
+              in Schongau, Landsberg am Lech und der gesamten Region. Unser Innen-
+              und Außendienst kümmert sich darum, dass Ihre Verträge nicht nur abgeschlossen,
+              sondern auch im Schadenfall verlässlich begleitet werden.
+            </p>
+            <ul className="bullets" style={{marginTop: 8}}>
+              <li>
+                <Icon path={I.check} strokeWidth={2}/>
+                <div><strong>Unabhängig als Makler</strong><span>Vergleich aller relevanten Versicherer am deutschen Markt.</span></div>
+              </li>
+              <li>
+                <Icon path={I.check} strokeWidth={2}/>
+                <div><strong>Persönlicher Ansprechpartner</strong><span>Vom Erstgespräch über die Police bis zur Schadenmeldung.</span></div>
+              </li>
+              <li>
+                <Icon path={I.check} strokeWidth={2}/>
+                <div><strong>Qualifizierte IHK-Abschlüsse</strong><span>Versicherungsfachleute und -kaufleute IHK im gesamten Team.</span></div>
+              </li>
+            </ul>
+            <a href="ueber-uns.html" className="btn btn--ghost" style={{marginTop: 8}}>
+              Das ganze Team ansehen <Icon path={I.arrowRight} size={16} strokeWidth={2}/>
+            </a>
+          </div>
+          <div className="team-teaser__img" role="img" aria-label="fides Team in Schongau"></div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Home() {
+  return (
+    <>
+      <Header active="home"/>
+      <Hero/>
+      <TrustBar/>
+      <Services/>
+      <SchnellcheckSection/>
+      <Testimonials/>
+      <TeamTeaser/>
+      <CTAStrip/>
+      <Footer/>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<Home/>);
+</script>
+</body>
+</html>

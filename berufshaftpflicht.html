@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Berufshaftpflichtversicherung – fides GmbH Schongau</title>
+<meta name="description" content="Berufshaftpflicht für Beratungs- und Planungsberufe: Architekten, Steuerberater, IT-Dienstleister und mehr. Unabhängiger Marktvergleich aus Schongau."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"/>
+<link rel="stylesheet" href="shared/styles.css"/>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="shared/components.jsx"></script>
+
+<script type="text/babel" data-presets="react">
+const { Icon, I, Header, Footer, SchnellcheckSection, CTAStrip } = window.fides;
+
+const HERO_IMG = "url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2000&q=80')";
+
+function Page() {
+  return (
+    <>
+      <Header active="bhf"/>
+
+      <section className="hero hero--product" style={{"--hero-image": HERO_IMG}}>
+        <div className="hero__bg"></div>
+        <div className="container hero__inner">
+          <span className="eyebrow" style={{color: "#C8DCA0"}}>Leistung · Berufshaftpflicht</span>
+          <h1 style={{textWrap: "balance"}}>Berufshaftpflicht: Schutz, wenn ein Fehler bares Geld kostet.</h1>
+          <p className="lead">
+            Wo Beratung, Planung oder Gutachten zur Hauptleistung gehören, drohen reine Vermögens­schäden –
+            also finanzielle Folgen ohne vorausgehende Personen- oder Sachschäden. Genau hier greift die
+            Berufshaftpflicht und schützt Ihre Existenz.
+          </p>
+          <div className="hero__cta">
+            <a href="#schnellcheck" className="btn btn--primary btn--lg">
+              Schnellcheck starten <Icon path={I.arrowRight} size={18} strokeWidth={2}/>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="product-grid">
+            <div>
+              <span className="eyebrow">Was ist das?</span>
+              <h2>Absicherung von Vermögens­schäden aus Ihrer beruflichen Tätigkeit.</h2>
+              <p className="muted" style={{fontSize: "1.0625rem"}}>
+                Die Berufshaftpflicht (auch Vermögensschaden-Haftpflicht) ergänzt die Betriebshaftpflicht
+                um Schäden, die rein finanziell entstehen – etwa durch einen Beratungs- oder Berechnungsfehler.
+                Für viele freie Berufe und Beratungstätigkeiten ist sie gesetzlich oder kammerrechtlich vorgeschrieben.
+              </p>
+
+              <h3 style={{marginTop: 40}}>Was deckt der Vertrag ab?</h3>
+              <div className="coverage-grid">
+                <ul>
+                  <li><Icon path={I.check} strokeWidth={2}/><span><strong>Vermögensschäden</strong> aus Beratung, Planung, Begutachtung oder Vermittlung</span></li>
+                  <li><Icon path={I.check} strokeWidth={2}/><span><strong>Rechtskosten</strong> bei berechtigten und unberechtigten Forderungen</span></li>
+                  <li><Icon path={I.check} strokeWidth={2}/><span><strong>Erstrisikoversicherung</strong> für typische Tätigkeitsfelder</span></li>
+                </ul>
+                <ul>
+                  <li><Icon path={I.check} strokeWidth={2}/><span><strong>Cyber-Bausteine</strong> – auf Wunsch ergänzbar</span></li>
+                  <li><Icon path={I.check} strokeWidth={2}/><span><strong>Tätigkeit als Subunternehmer</strong> – nach Vereinbarung mitversichert</span></li>
+                  <li><Icon path={I.check} strokeWidth={2}/><span><strong>Vorsorgeversicherung</strong> für neu hinzukommende Tätigkeiten</span></li>
+                </ul>
+              </div>
+
+              <h3 style={{marginTop: 40}}>Für wen ist sie Pflicht oder dringend zu empfehlen?</h3>
+              <div className="who-list">
+                <div className="tag"><Icon path={I.doc} strokeWidth={1.8}/>Architekten & Ingenieure</div>
+                <div className="tag"><Icon path={I.doc} strokeWidth={1.8}/>Steuerberater & Wirtschaftsprüfer</div>
+                <div className="tag"><Icon path={I.doc} strokeWidth={1.8}/>Rechtsanwälte & Notare</div>
+                <div className="tag"><Icon path={I.doc} strokeWidth={1.8}/>Heilberufe & Therapeuten</div>
+                <div className="tag"><Icon path={I.doc} strokeWidth={1.8}/>IT- & Unternehmens­beratung</div>
+                <div className="tag"><Icon path={I.doc} strokeWidth={1.8}/>Immobilienmakler & Verwalter</div>
+              </div>
+            </div>
+
+            <aside>
+              <div className="fact-card">
+                <h4>Auf einen Blick</h4>
+                <ul>
+                  <li><strong>Schützt vor</strong><span>Vermögensschäden</span></li>
+                  <li><strong>Pflicht?</strong><span>Für viele Berufe ja</span></li>
+                  <li><strong>Typische Summe</strong><span>250 Tsd. – 5 Mio. €</span></li>
+                  <li><strong>Selbstbeteiligung</strong><span>Optional, beitragssenkend</span></li>
+                </ul>
+              </div>
+
+              <div className="card" style={{marginTop: 20}}>
+                <h4>Was kostet das?</h4>
+                <p className="muted" style={{fontSize: "0.9375rem"}}>
+                  Der Beitrag richtet sich nach Beruf, Honorarvolumen, gewählter Deckungssumme
+                  und Selbstbeteiligung. Solo-Selbständige in beratenden Tätigkeiten finden
+                  passende Verträge im niedrigen dreistelligen Bereich pro Jahr, kammerpflichtige
+                  Berufe liegen je nach Risiko deutlich höher.
+                </p>
+                <p className="muted" style={{fontSize: "0.9375rem", marginBottom: 0}}>
+                  Wir prüfen, welche Bedingungswerke wirklich zu Ihrer Tätigkeit passen –
+                  nicht jeder günstige Tarif schließt alle relevanten Tätigkeitsfelder mit ein.
+                </p>
+              </div>
+
+              <a href="#schnellcheck" className="btn btn--primary btn--lg" style={{marginTop: 20, width: "100%"}}>
+                Vergleich anfordern
+              </a>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <SchnellcheckSection/>
+      <CTAStrip/>
+      <Footer/>
+    </>
+  );
+}
+ReactDOM.createRoot(document.getElementById("root")).render(<Page/>);
+</script>
+</body>
+</html>
