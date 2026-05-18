@@ -99,6 +99,8 @@ a:hover { color: var(--green-hover); text-decoration: underline; text-decoration
   position: relative; overflow: hidden;
   background: #fff;
   color: var(--ink);
+  /* 88px header + 68px trustbar = 156px; hero fills the rest so trustbar sits at viewport bottom */
+  min-height: calc(100vh - 156px);
   display: flex;
   align-items: flex-start;
   padding: 0;
@@ -243,6 +245,14 @@ a:hover { color: var(--green-hover); text-decoration: underline; text-decoration
   .hero__card--review { width: 100%; }
   .hero__card--badge { padding: 18px 20px; width: 150px; }
   .hero__card--badge .num { font-size: 2rem; }
+}
+@media (max-width: 480px) {
+  .hero__cta { flex-direction: column; align-items: flex-start; }
+  .hero__cta .btn { width: 100%; justify-content: center; }
+  .trustbar__row { gap: 16px 24px; }
+  .trustbar__item { font-size: 0.875rem; }
+  .site-header__inner { height: 68px; }
+  .brand__logo { height: 34px; }
 }
 
 /* Smaller hero variants for inner pages */
