@@ -52,6 +52,7 @@ function Header({ active }) {
   const services = [
     { href: "betriebshaftpflicht.html", title: "Betriebshaftpflicht", sub: "Schutz vor Personen- und Sachschäden", key: "bhv" },
     { href: "betriebliche-krankenversicherung.html", title: "Betriebliche Krankenversicherung", sub: "Gesundheits-Benefit für Ihr Team", key: "bkv" },
+    { href: "betriebliche-altersvorsorge.html", title: "Betriebliche Altersvorsorge", sub: "Betriebsrente als starker Benefit", key: "bav" },
     { href: "berufshaftpflicht.html", title: "Berufshaftpflicht", sub: "Schutz vor Vermögensschäden", key: "bhf" },
   ];
 
@@ -113,9 +114,9 @@ function Footer() {
             <h4>Kontakt</h4>
             <ul>
               <li>Karwendelring 2<br/>86956 Schongau</li>
-              <li><a href="tel:+4988616995681">08861 6995681</a></li>
+              <li><a href="tel:+4988616995681">+49 (8861) 699568-1</a></li>
               <li><a href="mailto:info@fides-finanz.de">info@fides-finanz.de</a></li>
-              <li style={{marginTop: 12, color: "rgba(255,255,255,0.62)"}}>Mo–Fr · 9:00–17:00</li>
+              <li style={{marginTop: 12, color: "rgba(255,255,255,0.62)"}}>Mo–Fr · 8:00–18:00</li>
             </ul>
           </div>
           <div>
@@ -123,6 +124,7 @@ function Footer() {
             <ul>
               <li><a href="betriebshaftpflicht.html">Betriebshaftpflicht</a></li>
               <li><a href="betriebliche-krankenversicherung.html">Betriebliche Krankenversicherung</a></li>
+              <li><a href="betriebliche-altersvorsorge.html">Betriebliche Altersvorsorge</a></li>
               <li><a href="berufshaftpflicht.html">Berufshaftpflicht</a></li>
               <li><a href="index.html#schnellcheck">Gewerbe-Schnellcheck</a></li>
             </ul>
@@ -183,16 +185,23 @@ function ServiceCard({ href, icon, title, body }) {
   );
 }
 
-/* ---------- Schnellcheck Section (with mock Tally form) ---------- */
+/* ---------- Schnellcheck Section (Tally embed) ---------- */
 function SchnellcheckSection({ id = "schnellcheck", compact = false }) {
-  const [step, setStep] = useState(0);
-  const [data, setData] = useState({ branche: "", mitarbeiter: "", umsatz: "", name: "", email: "", phone: "" });
-
-  const branchen = ["Handwerk", "Gastronomie", "Dienstleistung", "Einzelhandel", "Sonstige"];
-  const teams = ["1 (Solo)", "2–5", "6–20", "21–50", "50+"];
-
-  const next = () => setStep(s => Math.min(s + 1, 3));
-  const back = () => setStep(s => Math.max(s - 1, 0));
+  useEffect(() => {
+    const ensureTally = () => {
+      if (window.Tally && typeof window.Tally.loadEmbeds === "function") {
+        window.Tally.loadEmbeds();
+        return;
+      }
+      if (document.querySelector('script[src="https://tally.so/widgets/embed.js"]')) return;
+      const s = document.createElement("script");
+      s.src = "https://tally.so/widgets/embed.js";
+      s.async = true;
+      s.onload = () => window.Tally && window.Tally.loadEmbeds && window.Tally.loadEmbeds();
+      document.body.appendChild(s);
+    };
+    ensureTally();
+  }, []);
 
   return (
     <section id={id} className="section schnellcheck">
@@ -202,7 +211,7 @@ function SchnellcheckSection({ id = "schnellcheck", compact = false }) {
             <span className="eyebrow">Gewerbe-Schnellcheck</span>
             <h2 style={{textWrap: "balance"}}>In 60 Sekunden zur passenden Absicherung.</h2>
             <p className="muted" style={{fontSize: "1.0625rem", maxWidth: 480}}>
-              Beantworten Sie sechs kurze Fragen. Wir vergleichen anschließend
+              Beantworten Sie wenige kurze Fragen. Wir vergleichen anschließend
               den gesamten Markt und melden uns mit konkreten Empfehlungen –
               persönlich, telefonisch, ohne Verkaufsdruck.
             </p>
@@ -211,14 +220,14 @@ function SchnellcheckSection({ id = "schnellcheck", compact = false }) {
                 <Icon path={I.bolt} strokeWidth={1.8}/>
                 <div>
                   <strong>Vollständiger Marktvergleich</strong>
-                  <span>Wir prüfen Tarife von über 100 Versicherern und filtern nur die fünf besten Optionen für Ihren Betrieb.</span>
+                  <span>Wir prüfen den gesamten relevanten Markt und filtern die Tarife, die wirklich zu Ihrem Betrieb passen.</span>
                 </div>
               </li>
               <li>
                 <Icon path={I.shield} strokeWidth={1.8}/>
                 <div>
                   <strong>Unabhängig, nicht provisionsgetrieben</strong>
-                  <span>Als Makler vertreten wir Ihre Interessen – nicht die einer einzelnen Gesellschaft.</span>
+                  <span>Als freier Gewerbemakler agieren wir unabhängig von Gesellschaftsinteressen und vertreten ausschließlich Ihre.</span>
                 </div>
               </li>
               <li>
@@ -232,89 +241,16 @@ function SchnellcheckSection({ id = "schnellcheck", compact = false }) {
           </div>
 
           <div className="tally-host" aria-label="Gewerbe-Schnellcheck Formular">
-            {/* The production site will render the Tally embed here:
-                <iframe data-tally-src="https://tally.so/embed/[TALLY_FORM_ID]?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-                  loading="lazy" width="100%" height="500" frameBorder={0} title="Gewerbe-Schnellcheck" />
-                Below is an interactive preview of the equivalent flow. */}
-            <div className="tally-fake">
-              <div className="progress">
-                {[0,1,2,3].map(i => <span key={i} className={i <= step ? "active" : ""}/>)}
-              </div>
-              <div className="kicker">Schritt {step+1} von 4 · ca. 60 Sek.</div>
-
-              {step === 0 && (
-                <div className="field">
-                  <h4>In welcher Branche sind Sie tätig?</h4>
-                  <div className="chips">
-                    {branchen.map(b => (
-                      <button key={b} className={"chip" + (data.branche === b ? " active" : "")}
-                        onClick={() => setData(d => ({...d, branche: b}))}>{b}</button>
-                    ))}
-                  </div>
-                </div>
-              )}
-              {step === 1 && (
-                <div className="field">
-                  <h4>Wie viele Mitarbeitende beschäftigen Sie?</h4>
-                  <div className="chips">
-                    {teams.map(t => (
-                      <button key={t} className={"chip" + (data.mitarbeiter === t ? " active" : "")}
-                        onClick={() => setData(d => ({...d, mitarbeiter: t}))}>{t}</button>
-                    ))}
-                  </div>
-                </div>
-              )}
-              {step === 2 && (
-                <div className="field">
-                  <h4>Welche Themen sind für Sie aktuell relevant?</h4>
-                  <div className="chips">
-                    {["Betriebshaftpflicht","bKV","Berufshaftpflicht","Sachversicherung","Cyber","Komplettcheck"].map(t => (
-                      <button key={t} className="chip" onClick={(e) => e.currentTarget.classList.toggle("active")}>{t}</button>
-                    ))}
-                  </div>
-                  <label style={{marginTop: 10}}>Geschätzter Jahresumsatz (optional)</label>
-                  <input type="text" placeholder="z. B. 350.000 €" value={data.umsatz}
-                    onChange={e => setData(d => ({...d, umsatz: e.target.value}))}/>
-                </div>
-              )}
-              {step === 3 && (
-                <div className="field">
-                  <h4>Wohin dürfen wir Ihre Auswertung senden?</h4>
-                  <label>Name</label>
-                  <input type="text" placeholder="Vor- und Nachname" value={data.name}
-                    onChange={e => setData(d => ({...d, name: e.target.value}))}/>
-                  <div className="field-row">
-                    <div className="field">
-                      <label>E-Mail</label>
-                      <input type="email" placeholder="kontakt@beispiel.de" value={data.email}
-                        onChange={e => setData(d => ({...d, email: e.target.value}))}/>
-                    </div>
-                    <div className="field">
-                      <label>Telefon</label>
-                      <input type="tel" placeholder="08861 …" value={data.phone}
-                        onChange={e => setData(d => ({...d, phone: e.target.value}))}/>
-                    </div>
-                  </div>
-                  <span className="submit-note">
-                    Mit dem Absenden willigen Sie ein, dass wir uns telefonisch oder per E-Mail melden.
-                    Details in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.
-                  </span>
-                </div>
-              )}
-
-              <div style={{display: "flex", justifyContent: "space-between", gap: 12, marginTop: "auto", paddingTop: 16}}>
-                <button className="btn btn--ghost" onClick={back} disabled={step === 0} style={{opacity: step === 0 ? 0.4 : 1}}>Zurück</button>
-                {step < 3 ? (
-                  <button className="btn btn--primary" onClick={next}>
-                    Weiter <Icon path={I.arrowRight} size={16} strokeWidth={2.2}/>
-                  </button>
-                ) : (
-                  <button className="btn btn--primary" onClick={() => alert("Vielen Dank! Wir melden uns innerhalb eines Werktages.")}>
-                    Auswertung anfordern
-                  </button>
-                )}
-              </div>
-            </div>
+            <iframe
+              data-tally-src="https://tally.so/embed/pbJkvB?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+              loading="lazy"
+              width="100%"
+              height="600"
+              frameBorder={0}
+              marginHeight={0}
+              marginWidth={0}
+              title="Gewerbe-Schnellcheck"
+            />
           </div>
         </div>
       </div>

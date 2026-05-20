@@ -32,13 +32,13 @@
     "openingHoursSpecification": [{
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "09:00", "closes": "17:00"
+      "opens": "08:00", "closes": "18:00"
     }],
     "areaServed": [
       { "@type": "City", "name": "Schongau" },
       { "@type": "City", "name": "Landsberg am Lech" }
     ],
-    "serviceType": ["Betriebshaftpflicht","Betriebliche Krankenversicherung","Berufshaftpflicht"]
+    "serviceType": ["Betriebshaftpflicht","Betriebliche Krankenversicherung","Betriebliche Altersvorsorge","Berufshaftpflicht"]
   }]
 }
 </script>
@@ -60,20 +60,21 @@ function Hero() {
       <div className="hero__bg"></div>
       <div className="hero__inner">
         <div className="hero__copy">
-          <div className="hero__tag">UNABHÄNGIG · LOKAL · MARKT&shy;VERGLEICH</div>
+          <div className="hero__tag">UNABHÄNGIG · LOKAL · GANZHEITLICH</div>
           <h1>
-            Ihr <span className="accent">unabhängiger</span> Versicherungs­makler für Gewerbe.
+            Ihr Versicherungs­makler für Gewerbe – für alle, die ihr <span className="accent">Unternehmen lieben</span>.
           </h1>
           <p className="lead">
-            Wir vergleichen den gesamten Markt für Handwerk, Gastronomie, Dienstleister
-            und Einzelhandel – und finden den Schutz, der wirklich zu Ihrem Betrieb passt.
+            Was uns als Dienstleister auszeichnet, ist die Nähe zu unseren Kunden.
+            Wir verstehen uns als langfristiger Partner und ganzheitlich orientierter Risikocoach –
+            mit der Aufgabe, die individuellen Werte Ihres Unternehmens zu sichern.
           </p>
           <div className="hero__cta">
             <a href="#schnellcheck" className="btn btn--primary btn--lg">
               Schnellcheck starten <Icon path={I.arrowRight} size={18} strokeWidth={2}/>
             </a>
-            <a href="betriebshaftpflicht.html" className="btn btn--ghost btn--lg">
-              Leistungen entdecken
+            <a href="ueber-uns.html" className="btn btn--ghost btn--lg">
+              Mehr über fides
             </a>
           </div>
         </div>
@@ -82,16 +83,16 @@ function Hero() {
           <div className="hero__card hero__card--service">
             <span className="ico"><Icon path={I.shield} strokeWidth={1.7}/></span>
             <div className="copy">
-              <strong>Marktvergleich</strong>
-              <span>100+ Versicherer geprüft</span>
+              <strong>Ganzheitlicher Marktvergleich</strong>
+              <span>Versicherungs-, Risiko- und Vorsorgeberatung aus einer Hand</span>
             </div>
           </div>
 
           <div className="hero__card hero__card--review">
             <div className="avatar">SF</div>
             <div className="meta">
-              <strong>Referenz wird ergänzt</strong>
-              <span>Handwerk · Pfaffenwinkel</span>
+              <strong>Inhabergeführt seit Jahren</strong>
+              <span>Stefan & Marvin Feyerabend · Schongau</span>
               <div className="stars">★★★★★</div>
             </div>
           </div>
@@ -106,25 +107,72 @@ function Hero() {
   );
 }
 
-function Services() {
+function Engagement() {
   return (
     <section className="section">
       <div className="container">
         <div className="section-head">
-          <span className="eyebrow">Unsere Leistungen</span>
-          <h2>Drei Bausteine, mit denen Ihr Betrieb richtig abgesichert ist.</h2>
-          <p>Wir konzentrieren uns auf die Versicherungen, die für Gewerbekunden den Unterschied machen – und sagen offen, wenn ein Baustein für Sie nicht nötig ist.</p>
+          <span className="eyebrow">Unser Engagement – Ihre Vorteile</span>
+          <h2>Wenn Sie mehr erwarten als ein anonymes Vergleichsportal.</h2>
+          <p>Ein ganzheitlicher Dienstleistungsansatz, bei dem Versicherungs­management, Risikomanagement und Vorsorgeberatung sinnvoll ineinandergreifen – maßgeschneidert auf Ihren Betrieb.</p>
+        </div>
+        <div className="why-grid">
+          <div className="card why">
+            <span className="ico-wrap"><Icon path={I.scale} strokeWidth={1.6}/></span>
+            <h3>Transparente, bedarfsorientierte Beratung</h3>
+            <p className="muted" style={{margin: 0}}>
+              Als freier Gewerbemakler agieren wir unabhängig von Gesellschafts­interessen. Jeder Kunde erhält eine flexibel auf seine Bedürfnisse zugeschnittene Risikolösung.
+            </p>
+          </div>
+          <div className="card why">
+            <span className="ico-wrap"><Icon path={I.spark} strokeWidth={1.6}/></span>
+            <h3>Maßgeschneiderte Konzepte</h3>
+            <p className="muted" style={{margin: 0}}>
+              Seit vielen Jahren unterstützt fides bei der Absicherung spezifischer Risiken – mit fundierter Fachkenntnis in fast allen Branchen und Wirtschafts­zweigen.
+            </p>
+          </div>
+          <div className="card why">
+            <span className="ico-wrap"><Icon path={I.users} strokeWidth={1.6}/></span>
+            <h3>Persönliche, langjährige Betreuung</h3>
+            <p className="muted" style={{margin: 0}}>
+              Unsere Kunden schätzen seit vielen Jahren eine ganzheitliche Betreuung, die über das übliche Maß weit hinausgeht – als vertrauensvoller Partner Ihres Unternehmens­erfolgs.
+            </p>
+          </div>
+          <div className="card why">
+            <span className="ico-wrap"><Icon path={I.shield} strokeWidth={1.6}/></span>
+            <h3>Verlässlich im Schadenfall</h3>
+            <p className="muted" style={{margin: 0}}>
+              Wenn es darauf ankommt, übernehmen wir die Verhandlungen mit dem Versicherer in Ihrem Namen – für eine rasche, unbürokratische Durchsetzung Ihrer Ansprüche.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Services() {
+  return (
+    <section className="section section--alt">
+      <div className="container">
+        <div className="section-head">
+          <span className="eyebrow">Unsere Kompetenzen</span>
+          <h2>Ein Ansprechpartner für alle Finanz- und Versicherungsfragen.</h2>
+          <p>Von der Absicherung im Gewerbebereich über die betriebliche Vorsorge bis zum Gesundheits-Benefit für Ihr Team: fides betreut Sie ganzheitlich – mit Blick aufs große Ganze.</p>
         </div>
         <div className="service-grid">
           <ServiceCard href="betriebshaftpflicht.html" icon={I.shield}
             title="Betriebshaftpflicht"
-            body="Schützt Ihren Betrieb vor finanziellen Folgen, wenn Dritte zu Schaden kommen – Personen, Sachen oder Vermögen."/>
+            body="Der Grundschutz für jeden Betrieb. Schützt Sie vor Personen-, Sach- und Vermögens­folgeschäden Dritter."/>
           <ServiceCard href="betriebliche-krankenversicherung.html" icon={I.heart}
             title="Betriebliche Krankenversicherung"
-            body="Ein steuerlich attraktiver Gesundheits-Benefit, mit dem Sie qualifizierte Mitarbeitende gewinnen und langfristig binden."/>
+            body="Ein unbezahlbarer Vorteil für Arbeitnehmer und deren Familien – steuerlich attraktiv, ohne Gesundheitsprüfung."/>
+          <ServiceCard href="betriebliche-altersvorsorge.html" icon={I.euro}
+            title="Betriebliche Altersvorsorge"
+            body="Mitarbeiter finden und binden im War for Talents. Steuer- und sozialabgabengeförderte Betriebsrente für Ihr Team."/>
           <ServiceCard href="berufshaftpflicht.html" icon={I.briefcase}
             title="Berufshaftpflicht"
-            body="Pflicht für viele Beratungs- und Planungsberufe – sie deckt reine Vermögensschäden aus Ihrer beruflichen Tätigkeit ab."/>
+            body="Schutz vor reinen Vermögensschäden – Pflicht für viele Beratungs- und Planungsberufe."/>
         </div>
       </div>
     </section>
@@ -203,6 +251,7 @@ function Home() {
       <Header active="home"/>
       <Hero/>
       <TrustBar/>
+      <Engagement/>
       <Services/>
       <SchnellcheckSection/>
       <Testimonials/>
