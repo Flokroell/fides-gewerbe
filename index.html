@@ -180,10 +180,22 @@ function Services() {
 }
 
 function Testimonials() {
-  const slots = [
-    "Handwerksbetrieb · Pfaffenwinkel",
-    "Gastronomie · Landsberg am Lech",
-    "Dienstleistung · Schongau",
+  const reviews = [
+    {
+      quote: "Um gut beraten zu werden, braucht es einen Berater mit flexiblem Zeitmanagement, Verständnis für Unverständnis und viel Geduld. Diesen haben wir in Herrn Feyerabend gefunden!",
+      author: "Peter Kloppenburg",
+      date: "Oktober 2019",
+    },
+    {
+      quote: "Es wurde transparent alle möglichen Optionen aufgezeigt, sodass am Ende die beste für individuelle Bedürfnisse ausgewählt werden konnte. Auch nicht auf Verkaufsabschluss gedrängt.",
+      author: "Frank B.",
+      date: "Juni 2019",
+    },
+    {
+      quote: "Kompetente und seriöse Beratung. Mit Feingefühl und durch Humor bleibt auch einiges von dem umfangreichen Wissen des Geschäftsführers hängen. Es lohnt sich wirklich, seine Versicherungen überprüfen zu lassen.",
+      author: "Stefan H.",
+      date: "August 2017",
+    },
   ];
   return (
     <section className="section section--alt">
@@ -193,14 +205,17 @@ function Testimonials() {
           <h2>Was Gewerbekunden über uns sagen.</h2>
         </div>
         <div className="testimonial-grid">
-          {slots.map((label, i) => (
+          {reviews.map((r, i) => (
             <div className="testi" key={i}>
-              <div className="testi__mark">“</div>
-              <p className="testi__placeholder">Referenz wird von Stefan Feyerabend ergänzt.</p>
-              <div className="testi__source">{label}</div>
+              <div className="testi__stars">★★★★★</div>
+              <p className="testi__quote">„{r.quote}"</p>
+              <div className="testi__source"><strong>{r.author}</strong> · {r.date}</div>
             </div>
           ))}
         </div>
+        <p className="testi__footnote">
+          Geprüfte Bewertungen · <a href="https://www.golocal.de/schongau/finanzberatung/fides-gmbh-finanzberatung-9uNfz/" target="_blank" rel="noopener">5,0 ★ auf golocal.de</a>
+        </p>
       </div>
     </section>
   );

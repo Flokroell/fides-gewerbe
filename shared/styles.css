@@ -114,9 +114,11 @@ a:hover { color: var(--green-hover); text-decoration: underline; text-decoration
 .hero__bg::after {
   content: "";
   position: absolute; top: 0; right: 0; bottom: 0;
-  width: 42%;
-  background: linear-gradient(110deg, transparent 0%, transparent 30%, rgba(247, 249, 245, 0.9) 60%);
-  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+  width: 52%;
+  background:
+    linear-gradient(100deg, #fff 0%, rgba(255,255,255,0.85) 12%, rgba(255,255,255,0.35) 28%, rgba(255,255,255,0) 50%),
+    linear-gradient(180deg, rgba(255,255,255,0) 60%, rgba(255,255,255,0.55) 92%, #fff 100%),
+    url("img/schongau-hero.webp") center 30% / cover no-repeat;
 }
 .hero__inner {
   position: relative; z-index: 1;
@@ -166,7 +168,7 @@ a:hover { color: var(--green-hover); text-decoration: underline; text-decoration
   position: absolute;
   background: #fff;
   border-radius: 14px;
-  box-shadow: 0 24px 60px rgba(17, 24, 9, 0.10), 0 4px 12px rgba(17, 24, 9, 0.05);
+  box-shadow: 0 28px 70px rgba(17, 24, 9, 0.18), 0 8px 18px rgba(17, 24, 9, 0.08);
   border: 1px solid var(--border);
 }
 .hero__card--review {
@@ -233,10 +235,16 @@ a:hover { color: var(--green-hover); text-decoration: underline; text-decoration
     grid-template-columns: 1fr; gap: 48px;
     padding: 56px 24px;
   }
-  .hero__accent { height: 280px; max-width: 460px; }
-  .hero__card--review { top: 0; }
+  .hero__accent {
+    height: 320px; max-width: 100%;
+    border-radius: 14px; overflow: hidden;
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0) 60%, rgba(255,255,255,0.4) 100%),
+      url("img/schongau-hero.webp") center 30% / cover no-repeat;
+  }
+  .hero__card--review { top: 16px; left: 16px; }
   .hero__card--service { display: none; }
-  .hero__card--badge { top: auto; bottom: 0; right: 0; }
+  .hero__card--badge { top: auto; bottom: 16px; right: 16px; }
   .hero__bg::after { display: none; }
 }
 @media (max-width: 560px) {
@@ -470,12 +478,20 @@ a:hover { color: var(--green-hover); text-decoration: underline; text-decoration
 .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 @media (max-width: 880px) { .testimonial-grid { grid-template-columns: 1fr; } }
 .testi {
-  background: #fff; border: 1px dashed var(--border); border-radius: var(--radius);
+  background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
   padding: 28px; position: relative;
+  box-shadow: 0 4px 14px rgba(17, 24, 9, 0.04);
+  display: flex; flex-direction: column;
 }
 .testi__mark { color: var(--green); font-size: 2.5rem; font-family: "Source Sans Pro"; line-height: 1; margin-bottom: 8px; }
+.testi__stars { color: #E6A700; letter-spacing: 2px; font-size: 1rem; margin-bottom: 14px; }
 .testi__placeholder { font-style: italic; color: var(--muted); }
-.testi__source { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border); font-size: 0.875rem; color: var(--muted); }
+.testi__quote { color: var(--ink); font-size: 1rem; line-height: 1.6; margin: 0; flex: 1; }
+.testi__source { margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--border); font-size: 0.875rem; color: var(--muted); }
+.testi__source strong { color: var(--ink); font-family: "Source Sans Pro"; font-weight: 700; }
+.testi__footnote { text-align: center; margin-top: 28px; font-size: 0.875rem; color: var(--muted); }
+.testi__footnote a { color: var(--green); text-decoration: none; font-weight: 600; }
+.testi__footnote a:hover { text-decoration: underline; }
 
 /* Team teaser */
 .team-teaser { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; }
