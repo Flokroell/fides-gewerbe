@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="icon" href="/shared/fides-logo.svg" type="image/svg+xml"/>
+<link rel="apple-touch-icon" href="/shared/fides-logo.svg"/>
+<meta name="theme-color" content="#5C7A2F"/>
 <title>Betriebliche Altersvorsorge (bAV) – fides GmbH Schongau</title>
 <meta name="description" content="Betriebliche Altersvorsorge (bAV) für Gewerbe und Mittelstand. Steuer- und sozialabgabengeförderte Betriebsrente – Marktvergleich durch Ihren unabhängigen Versicherungsmakler aus Schongau."/>
 <link rel="canonical" href="https://fides-gewerbe.de/betriebliche-altersvorsorge.html"/>
@@ -21,131 +24,18 @@
 <meta name="twitter:image" content="https://fides-gewerbe.de/shared/img/og-image.jpg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" media="print" onload="this.media='all'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"/></noscript>
 <link rel="stylesheet" href="shared/styles.css"/>
 </head>
 <body>
 <div id="root"></div>
-<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-<script type="text/babel" src="shared/components.jsx"></script>
+<script defer src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
+<script defer src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
+<script defer src="shared/components.js"></script>
 
-<script type="text/babel" data-presets="react">
-const { Icon, I, Header, Footer, SchnellcheckSection, CTAStrip } = window.fides;
-
-const HERO_IMG = "url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=2000&q=80')";
-
-function Page() {
-  return (
-    <>
-      <Header active="bav"/>
-
-      <section className="hero hero--product" style={{"--hero-image": HERO_IMG}}>
-        <div className="hero__bg"></div>
-        <div className="container hero__inner">
-          <span className="eyebrow" style={{color: "#C8DCA0"}}>Leistung · Betriebliche Altersvorsorge</span>
-          <h1 style={{textWrap: "balance"}}>Betriebsrente: Mitarbeiter finden und binden im „War for Talents".</h1>
-          <p className="lead">
-            Heute reichen ein abwechslungsreicher Job und ein gutes Gehalt nicht mehr aus, um Fachkräfte langfristig zu halten.
-            Mit einer durchdachten betrieblichen Altersvorsorge schenken Sie Ihrem Team echte finanzielle Sicherheit –
-            und positionieren sich als attraktiver Arbeitgeber im Pfaffenwinkel.
-          </p>
-          <div className="hero__cta">
-            <a href="#schnellcheck" className="btn btn--primary btn--lg">
-              Schnellcheck starten <Icon path={I.arrowRight} size={18} strokeWidth={2}/>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="container">
-          <div className="product-grid">
-            <div>
-              <span className="eyebrow">Was ist das?</span>
-              <h2>Vom Arbeitgeber zugesagte Versorgungsleistungen für Alter, Tod und Invalidität.</h2>
-              <p className="muted" style={{fontSize: "1.0625rem"}}>
-                Die betriebliche Altersvorsorge (bAV) umfasst alle finanziellen Leistungen, die Sie als
-                Arbeitgeber Ihren Mitarbeitenden zur Altersversorgung, zur Versorgung von Hinterbliebenen
-                im Todesfall oder zur Invaliditätsversorgung bei Erwerbs- oder Berufsunfähigkeit zusagen.
-                Für viele Arbeitnehmer ist die Betriebsrente eine sinnvolle Ergänzung zur gesetzlichen
-                Rente – für Sie als Arbeitgeber ein steuerlich gefördertes Instrument, das Loyalität schafft.
-              </p>
-
-              <h3 style={{marginTop: 40}}>Welche Vorteile haben Sie als Arbeitgeber?</h3>
-              <div className="coverage-grid">
-                <ul>
-                  <li><Icon path={I.check} strokeWidth={2}/><span><strong>Mitarbeiterbindung</strong> – Benefits, die im Bewerbungsgespräch den Unterschied machen</span></li>
-                  <li><Icon path={I.check} strokeWidth={2}/><span><strong>Sozialabgabenersparnis</strong> – bei Entgeltumwandlung sparen Sie Lohnnebenkosten</span></li>
-                  <li><Icon path={I.check} strokeWidth={2}/><span><strong>Pflichtzuschuss erfüllt</strong> – seit 2022 für alle Neu- und Altverträge gesetzlich vorgeschrieben</span></li>
-                </ul>
-                <ul>
-                  <li><Icon path={I.check} strokeWidth={2}/><span><strong>Steuerlich attraktiv</strong> – Beiträge sind als Betriebs­ausgabe abzugsfähig</span></li>
-                  <li><Icon path={I.check} strokeWidth={2}/><span><strong>Bilanzneutrale Gestaltung</strong> möglich – je nach Durchführungsweg</span></li>
-                  <li><Icon path={I.check} strokeWidth={2}/><span><strong>Image als attraktiver Arbeitgeber</strong> – gerade für mittelständische Betriebe in der Region</span></li>
-                </ul>
-              </div>
-
-              <h3 style={{marginTop: 40}}>Vorteile für Ihre Mitarbeitenden</h3>
-              <div className="who-list">
-                <div className="tag"><Icon path={I.spark} strokeWidth={1.8}/>Steuer- und sozialabgabenbegünstigt</div>
-                <div className="tag"><Icon path={I.shield} strokeWidth={1.8}/>Insolvenzschutz über den PSV</div>
-                <div className="tag"><Icon path={I.heart} strokeWidth={1.8}/>Hinterbliebenen- und BU-Schutz integrierbar</div>
-                <div className="tag"><Icon path={I.users} strokeWidth={1.8}/>Portabel beim Arbeitgeberwechsel</div>
-                <div className="tag"><Icon path={I.euro} strokeWidth={1.8}/>Echte zusätzliche Rente fürs Alter</div>
-                <div className="tag"><Icon path={I.bolt} strokeWidth={1.8}/>Einfache Entgeltumwandlung</div>
-              </div>
-
-              <h3 style={{marginTop: 40}}>Welche Durchführungswege gibt es?</h3>
-              <p className="muted">
-                Direktversicherung, Pensionskasse, Pensionsfonds, Unterstützungs­kasse und Direktzusage –
-                jeder Weg hat eigene steuerliche, bilanzielle und arbeitsrechtliche Konsequenzen. Wir
-                analysieren mit Ihnen, welches Modell zu Ihrer Unternehmens­größe, Belegschaft und
-                Liquidität passt – und welche Versicherer aktuell die attraktivsten Konditionen bieten.
-              </p>
-            </div>
-
-            <aside>
-              <div className="fact-card">
-                <h4>Auf einen Blick</h4>
-                <ul>
-                  <li><strong>Versicherungsnehmer</strong><span>Arbeitgeber</span></li>
-                  <li><strong>Versicherte</strong><span>Mitarbeitende</span></li>
-                  <li><strong>Pflichtzuschuss</strong><span>15 % bei Entgeltumwandlung</span></li>
-                  <li><strong>Förderung</strong><span>§ 3 Nr. 63 EStG</span></li>
-                </ul>
-              </div>
-
-              <div className="card" style={{marginTop: 20}}>
-                <h4>Was kostet das den Betrieb?</h4>
-                <p className="muted" style={{fontSize: "0.9375rem"}}>
-                  Bei der Entgeltumwandlung trägt der Mitarbeitende den Hauptbeitrag selbst – Sie als
-                  Arbeitgeber leisten den Pflichtzuschuss von mindestens 15 % der umgewandelten Beträge.
-                  Arbeitgeber­finanzierte Modelle starten je nach Konzept ab etwa 50 Euro pro Mitarbeitendem
-                  und Monat, sind aber steuer- und sozialabgaben­begünstigt.
-                </p>
-                <p className="muted" style={{fontSize: "0.9375rem", marginBottom: 0}}>
-                  Wir zeigen Ihnen die echte Nettowirkung – für den Mitarbeitenden, für Ihr Unternehmen und für Ihre Bilanz.
-                </p>
-              </div>
-
-              <a href="#schnellcheck" className="btn btn--primary btn--lg" style={{marginTop: 20, width: "100%"}}>
-                bAV-Konzept anfragen
-              </a>
-            </aside>
-          </div>
-        </div>
-      </section>
-
-      <SchnellcheckSection/>
-      <CTAStrip/>
-      <Footer/>
-    </>
-  );
-}
-ReactDOM.createRoot(document.getElementById("root")).render(<Page/>);
-</script>
+<script defer src="shared/pages/betriebliche-altersvorsorge.js"></script>
 <script defer src="/shared/chatbot.js"></script>
 </body>
 </html>

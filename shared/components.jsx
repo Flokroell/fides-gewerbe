@@ -59,8 +59,8 @@ function Header({ active }) {
   return (
     <header className="site-header">
       <div className="container site-header__inner">
-        <a href="index.html" className="brand" aria-label="fides GmbH – Startseite">
-          <img src="shared/fides-logo.svg" alt="fides" className="brand__logo"/>
+        <a href="index.html" className="brand">
+          <img src="shared/fides-logo.svg" alt="fides" className="brand__logo" width="210" height="42"/>
           <span className="brand__sub">Gewerbe</span>
         </a>
 
@@ -111,7 +111,7 @@ function Footer() {
             </p>
           </div>
           <div>
-            <h4>Kontakt</h4>
+            <h3>Kontakt</h3>
             <ul>
               <li>Karwendelring 2<br/>86956 Schongau</li>
               <li><a href="tel:+4988616995681">+49 (8861) 699568-1</a></li>
@@ -120,7 +120,7 @@ function Footer() {
             </ul>
           </div>
           <div>
-            <h4>Leistungen</h4>
+            <h3>Leistungen</h3>
             <ul>
               <li><a href="betriebshaftpflicht.html">Betriebshaftpflicht</a></li>
               <li><a href="betriebliche-krankenversicherung.html">Betriebliche Krankenversicherung</a></li>
@@ -130,7 +130,7 @@ function Footer() {
             </ul>
           </div>
           <div>
-            <h4>Unternehmen</h4>
+            <h3>Unternehmen</h3>
             <ul>
               <li><a href="ueber-uns.html">Über uns</a></li>
               <li><a href="faq.html">FAQ</a></li>

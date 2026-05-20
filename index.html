@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="icon" href="/shared/fides-logo.svg" type="image/svg+xml"/>
+<link rel="apple-touch-icon" href="/shared/fides-logo.svg"/>
+<meta name="theme-color" content="#5C7A2F"/>
 <title>fides GmbH – Versicherungsmakler für Gewerbe in Schongau</title>
 <meta name="description" content="Unabhängiger Versicherungsmakler für Handwerk, Gastronomie, Dienstleister und Einzelhandel in Schongau und Landsberg am Lech. Schnellcheck in 60 Sekunden."/>
 <link rel="canonical" href="https://fides-gewerbe.de/"/>
@@ -21,7 +24,9 @@
 <meta name="twitter:image" content="https://fides-gewerbe.de/shared/img/og-image.jpg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"/>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" media="print" onload="this.media='all'"/>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"/></noscript>
 <link rel="stylesheet" href="shared/styles.css"/>
 <script type="application/ld+json">
 {
@@ -60,239 +65,11 @@
 <body>
 <div id="root"></div>
 
-<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-<script type="text/babel" src="shared/components.jsx"></script>
+<script defer src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
+<script defer src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
+<script defer src="shared/components.js"></script>
 
-<script type="text/babel" data-presets="react">
-const { Icon, I, Header, Footer, TrustBar, ServiceCard, SchnellcheckSection, CTAStrip } = window.fides;
-
-function Hero() {
-  return (
-    <section className="hero">
-      <div className="hero__bg"></div>
-      <div className="hero__inner">
-        <div className="hero__copy">
-          <div className="hero__tag">UNABHÄNGIG · LOKAL · GANZHEITLICH</div>
-          <h1>
-            Ihr Versicherungs­makler für Gewerbe – für alle, die ihr <span className="accent">Unternehmen lieben</span>.
-          </h1>
-          <p className="lead">
-            Was uns als Dienstleister auszeichnet, ist die Nähe zu unseren Kunden.
-            Wir verstehen uns als langfristiger Partner und ganzheitlich orientierter Risikocoach –
-            mit der Aufgabe, die individuellen Werte Ihres Unternehmens zu sichern.
-          </p>
-          <div className="hero__cta">
-            <a href="#schnellcheck" className="btn btn--primary btn--lg">
-              Schnellcheck starten <Icon path={I.arrowRight} size={18} strokeWidth={2}/>
-            </a>
-            <a href="ueber-uns.html" className="btn btn--ghost btn--lg">
-              Mehr über fides
-            </a>
-          </div>
-        </div>
-
-        <div className="hero__accent" aria-hidden="true">
-          <div className="hero__card hero__card--service">
-            <span className="ico"><Icon path={I.shield} strokeWidth={1.7}/></span>
-            <div className="copy">
-              <strong>Ganzheitlicher Marktvergleich</strong>
-              <span>Versicherungs-, Risiko- und Vorsorgeberatung aus einer Hand</span>
-            </div>
-          </div>
-
-          <div className="hero__card hero__card--review">
-            <div className="avatar">SF</div>
-            <div className="meta">
-              <strong>Inhabergeführt seit Jahren</strong>
-              <span>Stefan & Marvin Feyerabend · Schongau</span>
-              <div className="stars">★★★★★</div>
-            </div>
-          </div>
-
-          <div className="hero__card hero__card--badge">
-            <div className="num">100%</div>
-            <div className="label">Unabhängig</div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Engagement() {
-  return (
-    <section className="section">
-      <div className="container">
-        <div className="section-head">
-          <span className="eyebrow">Unser Engagement – Ihre Vorteile</span>
-          <h2>Wenn Sie mehr erwarten als ein anonymes Vergleichsportal.</h2>
-          <p>Ein ganzheitlicher Dienstleistungsansatz, bei dem Versicherungs­management, Risikomanagement und Vorsorgeberatung sinnvoll ineinandergreifen – maßgeschneidert auf Ihren Betrieb.</p>
-        </div>
-        <div className="why-grid">
-          <div className="card why">
-            <span className="ico-wrap"><Icon path={I.scale} strokeWidth={1.6}/></span>
-            <h3>Transparente, bedarfsorientierte Beratung</h3>
-            <p className="muted" style={{margin: 0}}>
-              Als freier Gewerbemakler agieren wir unabhängig von Gesellschafts­interessen. Jeder Kunde erhält eine flexibel auf seine Bedürfnisse zugeschnittene Risikolösung.
-            </p>
-          </div>
-          <div className="card why">
-            <span className="ico-wrap"><Icon path={I.spark} strokeWidth={1.6}/></span>
-            <h3>Maßgeschneiderte Konzepte</h3>
-            <p className="muted" style={{margin: 0}}>
-              Seit vielen Jahren unterstützt fides bei der Absicherung spezifischer Risiken – mit fundierter Fachkenntnis in fast allen Branchen und Wirtschafts­zweigen.
-            </p>
-          </div>
-          <div className="card why">
-            <span className="ico-wrap"><Icon path={I.users} strokeWidth={1.6}/></span>
-            <h3>Persönliche, langjährige Betreuung</h3>
-            <p className="muted" style={{margin: 0}}>
-              Unsere Kunden schätzen seit vielen Jahren eine ganzheitliche Betreuung, die über das übliche Maß weit hinausgeht – als vertrauensvoller Partner Ihres Unternehmens­erfolgs.
-            </p>
-          </div>
-          <div className="card why">
-            <span className="ico-wrap"><Icon path={I.shield} strokeWidth={1.6}/></span>
-            <h3>Verlässlich im Schadenfall</h3>
-            <p className="muted" style={{margin: 0}}>
-              Wenn es darauf ankommt, übernehmen wir die Verhandlungen mit dem Versicherer in Ihrem Namen – für eine rasche, unbürokratische Durchsetzung Ihrer Ansprüche.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Services() {
-  return (
-    <section className="section section--alt">
-      <div className="container">
-        <div className="section-head">
-          <span className="eyebrow">Unsere Kompetenzen</span>
-          <h2>Ein Ansprechpartner für alle Finanz- und Versicherungsfragen.</h2>
-          <p>Von der Absicherung im Gewerbebereich über die betriebliche Vorsorge bis zum Gesundheits-Benefit für Ihr Team: fides betreut Sie ganzheitlich – mit Blick aufs große Ganze.</p>
-        </div>
-        <div className="service-grid">
-          <ServiceCard href="betriebshaftpflicht.html" icon={I.shield}
-            title="Betriebshaftpflicht"
-            body="Der Grundschutz für jeden Betrieb. Schützt Sie vor Personen-, Sach- und Vermögens­folgeschäden Dritter."/>
-          <ServiceCard href="betriebliche-krankenversicherung.html" icon={I.heart}
-            title="Betriebliche Krankenversicherung"
-            body="Ein unbezahlbarer Vorteil für Arbeitnehmer und deren Familien – steuerlich attraktiv, ohne Gesundheitsprüfung."/>
-          <ServiceCard href="betriebliche-altersvorsorge.html" icon={I.euro}
-            title="Betriebliche Altersvorsorge"
-            body="Mitarbeiter finden und binden im War for Talents. Steuer- und sozialabgabengeförderte Betriebsrente für Ihr Team."/>
-          <ServiceCard href="berufshaftpflicht.html" icon={I.briefcase}
-            title="Berufshaftpflicht"
-            body="Schutz vor reinen Vermögensschäden – Pflicht für viele Beratungs- und Planungsberufe."/>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Testimonials() {
-  const reviews = [
-    {
-      quote: "Um gut beraten zu werden, braucht es einen Berater mit flexiblem Zeitmanagement, Verständnis für Unverständnis und viel Geduld. Diesen haben wir in Herrn Feyerabend gefunden!",
-      author: "Peter Kloppenburg",
-      date: "Oktober 2019",
-    },
-    {
-      quote: "Es wurde transparent alle möglichen Optionen aufgezeigt, sodass am Ende die beste für individuelle Bedürfnisse ausgewählt werden konnte. Auch nicht auf Verkaufsabschluss gedrängt.",
-      author: "Frank B.",
-      date: "Juni 2019",
-    },
-    {
-      quote: "Kompetente und seriöse Beratung. Mit Feingefühl und durch Humor bleibt auch einiges von dem umfangreichen Wissen des Geschäftsführers hängen. Es lohnt sich wirklich, seine Versicherungen überprüfen zu lassen.",
-      author: "Stefan H.",
-      date: "August 2017",
-    },
-  ];
-  return (
-    <section className="section section--alt">
-      <div className="container">
-        <div className="section-head">
-          <span className="eyebrow">Stimmen unserer Kunden</span>
-          <h2>Was Gewerbekunden über uns sagen.</h2>
-        </div>
-        <div className="testimonial-grid">
-          {reviews.map((r, i) => (
-            <div className="testi" key={i}>
-              <div className="testi__stars">★★★★★</div>
-              <p className="testi__quote">„{r.quote}"</p>
-              <div className="testi__source"><strong>{r.author}</strong> · {r.date}</div>
-            </div>
-          ))}
-        </div>
-        <p className="testi__footnote">
-          Geprüfte Bewertungen · <a href="https://www.golocal.de/schongau/finanzberatung/fides-gmbh-finanzberatung-9uNfz/" target="_blank" rel="noopener">5,0 ★ auf golocal.de</a>
-        </p>
-      </div>
-    </section>
-  );
-}
-
-function TeamTeaser() {
-  return (
-    <section className="section">
-      <div className="container">
-        <div className="team-teaser">
-          <div>
-            <span className="eyebrow">Über uns</span>
-            <h2>Inhabergeführt. Lokal. Seit Jahren im Pfaffenwinkel.</h2>
-            <p className="muted" style={{fontSize: "1.0625rem"}}>
-              Geführt von Stefan und Marvin Feyerabend betreut fides Gewerbekunden
-              in Schongau, Landsberg am Lech und der gesamten Region. Unser Innen-
-              und Außendienst kümmert sich darum, dass Ihre Verträge nicht nur abgeschlossen,
-              sondern auch im Schadenfall verlässlich begleitet werden.
-            </p>
-            <ul className="bullets" style={{marginTop: 8}}>
-              <li>
-                <Icon path={I.check} strokeWidth={2}/>
-                <div><strong>Unabhängig als Makler</strong><span>Vergleich aller relevanten Versicherer am deutschen Markt.</span></div>
-              </li>
-              <li>
-                <Icon path={I.check} strokeWidth={2}/>
-                <div><strong>Persönlicher Ansprechpartner</strong><span>Vom Erstgespräch über die Police bis zur Schadenmeldung.</span></div>
-              </li>
-              <li>
-                <Icon path={I.check} strokeWidth={2}/>
-                <div><strong>Qualifizierte IHK-Abschlüsse</strong><span>Versicherungsfachleute und -kaufleute IHK im gesamten Team.</span></div>
-              </li>
-            </ul>
-            <a href="ueber-uns.html" className="btn btn--ghost" style={{marginTop: 8}}>
-              Das ganze Team ansehen <Icon path={I.arrowRight} size={16} strokeWidth={2}/>
-            </a>
-          </div>
-          <div className="team-teaser__img" role="img" aria-label="fides Team in Schongau"></div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-function Home() {
-  return (
-    <>
-      <Header active="home"/>
-      <Hero/>
-      <TrustBar/>
-      <Engagement/>
-      <Services/>
-      <SchnellcheckSection/>
-      <Testimonials/>
-      <TeamTeaser/>
-      <CTAStrip/>
-      <Footer/>
-    </>
-  );
-}
-
-ReactDOM.createRoot(document.getElementById("root")).render(<Home/>);
-</script>
+<script defer src="shared/pages/index.js"></script>
 <script defer src="/shared/chatbot.js"></script>
 </body>
 </html>

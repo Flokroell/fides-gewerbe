@@ -1,0 +1,45 @@
+const {
+  Header,
+  Footer
+} = window.fides;
+function Page() {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Header, null), /*#__PURE__*/React.createElement("main", null, /*#__PURE__*/React.createElement("section", {
+    className: "hero hero--page",
+    style: {
+      padding: "64px 0 36px"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "hero__bg"
+  }), /*#__PURE__*/React.createElement("div", {
+    className: "container hero__inner"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "eyebrow",
+    style: {
+      color: "#C8DCA0"
+    }
+  }, "Rechtliches"), /*#__PURE__*/React.createElement("h1", null, "Datenschutzerkl\xE4rung"), /*#__PURE__*/React.createElement("p", {
+    className: "lead",
+    style: {
+      maxWidth: 560,
+      fontSize: "1rem"
+    }
+  }, "Wir verarbeiten personenbezogene Daten ausschlie\xDFlich auf gesetzlicher Grundlage und so sparsam wie m\xF6glich. Diese Erkl\xE4rung informiert Sie \xFCber Art, Umfang und Zweck der Verarbeitung gem\xE4\xDF Art. 13 DSGVO."))), /*#__PURE__*/React.createElement("section", {
+    className: "section"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "legal-prose"
+  }, /*#__PURE__*/React.createElement("h2", null, "1. Verantwortlicher"), /*#__PURE__*/React.createElement("div", {
+    className: "nap-block"
+  }, /*#__PURE__*/React.createElement("strong", null, "fides GmbH"), /*#__PURE__*/React.createElement("br", null), "Karwendelring 2, 86956 Schongau", /*#__PURE__*/React.createElement("br", null), "Telefon: ", /*#__PURE__*/React.createElement("a", {
+    href: "tel:+4988616995681"
+  }, "+49 (8861) 699568-1"), /*#__PURE__*/React.createElement("br", null), "E-Mail: ", /*#__PURE__*/React.createElement("a", {
+    href: "mailto:info@fides-finanz.de"
+  }, "info@fides-finanz.de"), /*#__PURE__*/React.createElement("br", null), "Vertreten durch die Gesch\xE4ftsf\xFChrer Stefan Feyerabend und Marvin Feyerabend."), /*#__PURE__*/React.createElement("h2", null, "2. Allgemeine Hinweise"), /*#__PURE__*/React.createElement("p", null, "Personenbezogene Daten (z. B. Name, Anschrift, E-Mail) werden auf dieser Website nur in dem erforderlichen Umfang erhoben. Eine Weitergabe an Dritte erfolgt nur, soweit dies zur Vertragserf\xFCllung erforderlich ist, gesetzlich vorgeschrieben oder durch Ihre Einwilligung gedeckt ist."), /*#__PURE__*/React.createElement("h2", null, "3. Hosting (Vercel Inc.)"), /*#__PURE__*/React.createElement("p", null, "Diese Website wird bei ", /*#__PURE__*/React.createElement("strong", null, "Vercel Inc."), ", 340 S Lemon Ave #4133, Walnut, CA 91789, USA, gehostet. Beim Aufruf der Seite werden Zugriffsdaten (insbesondere IP-Adresse, Datum, Uhrzeit, aufgerufene Ressource, User-Agent) in Server-Logfiles verarbeitet, um den Betrieb der Website sicher\xADzustellen und technische Probleme zu erkennen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am sicheren Betrieb der Website). Mit Vercel besteht ein Auftrags\xADverarbeitungsvertrag gem\xE4\xDF Art. 28 DSGVO sowie ein Daten\xFCbermittlungs\xADvertrag auf Grundlage der EU-Standardvertragsklauseln."), /*#__PURE__*/React.createElement("h2", null, "4. Kontaktaufnahme"), /*#__PURE__*/React.createElement("p", null, "Wenn Sie uns per E-Mail oder Telefon kontaktieren, werden Ihre Angaben zur Bearbeitung der Anfrage und f\xFCr den Fall von Anschlussfragen gespeichert. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Anbahnung oder Erf\xFCllung eines Vertrags) bzw. lit. f DSGVO (berechtigtes Interesse an der Beantwortung). Wir geben diese Daten nicht ohne Ihre Einwilligung weiter."), /*#__PURE__*/React.createElement("h2", null, "5. Gewerbe-Schnellcheck (Tally.so)"), /*#__PURE__*/React.createElement("p", null, "F\xFCr den Schnellcheck binden wir das Formular von ", /*#__PURE__*/React.createElement("strong", null, "Tally Forms Ltd."), ", 71-75 Shelton Street, Covent Garden, London, WC2H 9JQ, Vereinigtes K\xF6nigreich, ein. Beim Aufruf der entsprechenden Seite wird das Formular \xFCber einen iframe geladen; dabei werden technische Verbindungsdaten an Tally \xFCbermittelt. Die von Ihnen eingegebenen Antworten werden an uns \xFCbermittelt, damit wir Ihre Anfrage bearbeiten k\xF6nnen."), /*#__PURE__*/React.createElement("p", null, "Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Anbahnung eines Vertrags) bzw. lit. a DSGVO (Einwilligung mit dem Absenden des Formulars). Mit Tally besteht ein Auftragsverarbeitungs\xADvertrag. F\xFCr die \xDCbermittlung in das Vereinigte K\xF6nigreich besteht ein Angemessenheits\xADbeschluss der Europ\xE4ischen Kommission."), /*#__PURE__*/React.createElement("h2", null, "6. Verarbeitung der Schnellcheck-Antworten (Make.com)"), /*#__PURE__*/React.createElement("p", null, "Zur strukturierten Aufbereitung der Schnellcheck-Antworten setzen wir die Automatisierungs\xADplattform", /*#__PURE__*/React.createElement("strong", null, " Make.com"), " (Celonis SE / Celonis s.r.o., Hole\u010Dkova 3331/35, 15000 Praha 5, Tschechische Republik) ein. Die Daten werden ausschlie\xDFlich verarbeitet, um Ihre Anfrage vorzuqualifizieren und an unsere Beraterinnen und Berater zur weiteren Bearbeitung weiterzuleiten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO. Mit Make.com besteht ein Auftragsverarbeitungs\xADvertrag."), /*#__PURE__*/React.createElement("h2", null, "7. Cookies und Reichweiten\xADmessung"), /*#__PURE__*/React.createElement("p", null, "Diese Website setzt keine Marketing- oder Tracking-Cookies und keine Analyse\xADdienste ein. Es werden ausschlie\xDFlich technisch notwendige Cookies durch die eingebundenen Dienste (Tally, Vercel) verwendet, die f\xFCr deren Betrieb erforderlich sind."), /*#__PURE__*/React.createElement("h2", null, "8. Empf\xE4nger und Auftrags\xADverarbeiter"), /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement("li", null, "Tally Forms Ltd. \u2013 Formular\xADbereitstellung"), /*#__PURE__*/React.createElement("li", null, "Make.com / Celonis \u2013 Workflow-Automatisierung"), /*#__PURE__*/React.createElement("li", null, "Vercel Inc. \u2013 Hosting"), /*#__PURE__*/React.createElement("li", null, "Versicherer und Pools, soweit zur Vertrags\xADanbahnung erforderlich und nur nach ausdr\xFCcklicher Beauftragung durch Sie")), /*#__PURE__*/React.createElement("h2", null, "9. Speicherdauer"), /*#__PURE__*/React.createElement("p", null, "Wir speichern personenbezogene Daten nur so lange, wie es f\xFCr den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungs\xADfristen es vorsehen (handels- und steuerrechtlich in der Regel sechs bzw. zehn Jahre). Nach Wegfall des Zwecks und Ablauf der gesetzlichen Fristen werden die Daten gel\xF6scht."), /*#__PURE__*/React.createElement("h2", null, "10. Ihre Rechte"), /*#__PURE__*/React.createElement("p", null, "Sie haben jederzeit das Recht auf:"), /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement("li", null, "Auskunft \xFCber die Sie betreffenden personenbezogenen Daten (Art. 15 DSGVO)"), /*#__PURE__*/React.createElement("li", null, "Berichtigung unrichtiger Daten (Art. 16 DSGVO)"), /*#__PURE__*/React.createElement("li", null, "L\xF6schung (\u201ERecht auf Vergessenwerden\u201C, Art. 17 DSGVO)"), /*#__PURE__*/React.createElement("li", null, "Einschr\xE4nkung der Verarbeitung (Art. 18 DSGVO)"), /*#__PURE__*/React.createElement("li", null, "Daten\xFCbertragbarkeit (Art. 20 DSGVO)"), /*#__PURE__*/React.createElement("li", null, "Widerruf erteilter Einwilligungen mit Wirkung f\xFCr die Zukunft (Art. 7 Abs. 3 DSGVO)"), /*#__PURE__*/React.createElement("li", null, "Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)"), /*#__PURE__*/React.createElement("li", null, "Beschwerde bei einer Aufsichts\xADbeh\xF6rde (Art. 77 DSGVO) \u2013 zust\xE4ndig ist das Bayerische Landesamt f\xFCr Datenschutzaufsicht, Promenade 18, 91522 Ansbach.")), /*#__PURE__*/React.createElement("h2", null, "11. Datensicherheit"), /*#__PURE__*/React.createElement("p", null, "Wir verwenden auf der gesamten Website eine TLS-Verschl\xFCsselung (SSL) in Verbindung mit dem h\xF6chsten von Ihrem Browser unterst\xFCtzten Verschl\xFCsselungsgrad. Sie erkennen eine verschl\xFCsselte Verbindung am \u201Ehttps://\u201C in der Adresszeile und am Schloss-Symbol Ihres Browsers."), /*#__PURE__*/React.createElement("h2", null, "12. \xC4nderungen dieser Datenschutz\xADerkl\xE4rung"), /*#__PURE__*/React.createElement("p", null, "Wir behalten uns vor, diese Datenschutz\xADerkl\xE4rung anzupassen, wenn sich rechtliche Rahmenbedingungen oder Verarbeitungs\xADt\xE4tigkeiten \xE4ndern. Die jeweils aktuelle Fassung ist auf dieser Seite abrufbar."), /*#__PURE__*/React.createElement("p", {
+    className: "muted",
+    style: {
+      fontSize: "0.875rem"
+    }
+  }, "Stand: Mai 2026"))))), /*#__PURE__*/React.createElement(Footer, null));
+}
+ReactDOM.createRoot(document.getElementById("root")).render(/*#__PURE__*/React.createElement(Page, null));
