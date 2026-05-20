@@ -113,12 +113,21 @@ a:hover { color: var(--green-hover); text-decoration: underline; text-decoration
 }
 .hero__bg::after {
   content: "";
-  position: absolute; top: 0; right: 0; bottom: 0;
-  width: 52%;
+  position: absolute; inset: 0;
   background:
-    linear-gradient(100deg, #fff 0%, rgba(255,255,255,0.85) 12%, rgba(255,255,255,0.35) 28%, rgba(255,255,255,0) 50%),
-    linear-gradient(180deg, rgba(255,255,255,0) 60%, rgba(255,255,255,0.55) 92%, #fff 100%),
-    url("img/schongau-hero.webp") center 30% / cover no-repeat;
+    linear-gradient(95deg,
+      #fff 0%,
+      #fff 38%,
+      rgba(255,255,255,0.92) 48%,
+      rgba(255,255,255,0.7) 56%,
+      rgba(255,255,255,0.35) 66%,
+      rgba(255,255,255,0.08) 76%,
+      rgba(255,255,255,0) 85%),
+    linear-gradient(180deg,
+      rgba(255,255,255,0) 55%,
+      rgba(255,255,255,0.45) 88%,
+      #fff 100%),
+    url("img/schongau-hero.webp") right 25% / cover no-repeat;
 }
 .hero__inner {
   position: relative; z-index: 1;
