@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const WEBHOOK_URL = 'https://hook.eu1.make.com/v70a2t0iidmxc87il8fp1qpx3yr8xb2c';
+  const WEBHOOK_URL = 'https://n8n.kroellconsulting.de/webhook/fides-chatbot';
   const BRAND = '#86A94A';
   const BRAND_DARK = '#738E3C';
   const BRAND_TINT = '#F2F6EA';
@@ -190,7 +190,8 @@
 
     const payload = {
       messages_json: JSON.stringify(state.messages),
-      lead_already_notified: state.leadNotified
+      lead_already_notified: state.leadNotified,
+      site: 'fides-gewerbe'
     };
 
     try {
