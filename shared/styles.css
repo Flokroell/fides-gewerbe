@@ -495,10 +495,9 @@ a:hover { color: var(--green-hover); text-decoration: underline; text-decoration
 .tally-host {
   background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg);
   padding: 12px; box-shadow: var(--shadow-md);
-  min-height: 540px; display: flex; flex-direction: column;
-  overflow: hidden;
+  display: flex; flex-direction: column;
 }
-.tally-host iframe { border: 0; width: 100%; flex: 1; min-height: 540px; }
+.tally-host iframe { border: 0; width: 100%; flex: 1; min-height: 760px; }
 .tally-host .tally-fake {
   flex: 1; display: flex; flex-direction: column; gap: 16px;
 }
