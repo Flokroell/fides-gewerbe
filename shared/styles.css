@@ -492,38 +492,35 @@ a:hover { color: var(--green-hover); text-decoration: underline; text-decoration
 .bullets li strong { display: block; margin-bottom: 2px; font-family: "Source Sans Pro"; }
 .bullets li span { color: var(--muted); font-size: 0.9375rem; }
 
-.tally-host {
+.schnellcheck-form {
   background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg);
-  padding: 12px; box-shadow: var(--shadow-md);
-  display: flex; flex-direction: column;
+  padding: 28px 24px; box-shadow: var(--shadow-md);
+  display: flex; flex-direction: column; gap: 18px;
 }
-.tally-host iframe { border: 0; width: 100%; flex: 1; min-height: 760px; }
-.tally-host .tally-fake {
-  flex: 1; display: flex; flex-direction: column; gap: 16px;
-}
-.tally-host .tally-fake h4 { font-size: 1.125rem; margin-bottom: 2px; }
-.tally-host .field { display: flex; flex-direction: column; gap: 6px; }
-.tally-host label { font-size: 0.875rem; font-weight: 600; color: var(--ink); font-family: "Source Sans Pro"; }
-.tally-host input, .tally-host select, .tally-host textarea {
+.schnellcheck-form .field { display: flex; flex-direction: column; gap: 6px; }
+.schnellcheck-form label { font-size: 0.875rem; font-weight: 600; color: var(--ink); font-family: "Source Sans Pro"; }
+.schnellcheck-form input, .schnellcheck-form textarea {
   font: inherit; padding: 11px 12px; border: 1px solid var(--border);
   border-radius: 6px; background: #fff; color: var(--ink);
 }
-.tally-host input:focus, .tally-host select:focus, .tally-host textarea:focus { outline: 2px solid var(--green); outline-offset: -1px; border-color: var(--green-text); }
-.tally-host .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.tally-host .chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.tally-host .chip {
+.schnellcheck-form input:focus, .schnellcheck-form textarea:focus { outline: 2px solid var(--green); outline-offset: -1px; border-color: var(--green-text); }
+.schnellcheck-form .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.schnellcheck-form .chips--grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.schnellcheck-form .chip {
   padding: 8px 14px; border: 1px solid var(--border); border-radius: 999px;
   background: #fff; font-size: 0.875rem; cursor: pointer; font-weight: 600;
-  color: var(--ink); transition: all .12s;
+  color: var(--ink); transition: all .12s; text-align: center;
 }
-.tally-host .chip:hover { border-color: var(--green-text); color: var(--green-text); }
-.tally-host .chip.active { background: var(--green-text); color: #fff; border-color: var(--green-text); }
-.tally-host .progress { display: flex; gap: 4px; margin-bottom: 4px; }
-.tally-host .progress span {
-  flex: 1; height: 4px; background: var(--border); border-radius: 2px;
-}
-.tally-host .progress span.active { background: var(--green-text); }
-.tally-host .submit-note { font-size: 0.8125rem; color: var(--muted); }
+.schnellcheck-form .chip:hover { border-color: var(--green-text); color: var(--green-text); }
+.schnellcheck-form .chip.active { background: var(--green-text); color: #fff; border-color: var(--green-text); }
+.schnellcheck-form .progress { display: flex; gap: 4px; margin-bottom: 4px; }
+.schnellcheck-form .progress span { flex: 1; height: 4px; background: var(--border); border-radius: 2px; }
+.schnellcheck-form .progress span.active { background: var(--green-text); }
+.schnellcheck-form .submit-note { font-size: 0.8125rem; color: var(--muted); margin: 0; }
+.schnellcheck-nav { display: flex; gap: 12px; margin-top: 4px; }
+.schnellcheck-nav .btn { flex: 1; }
+.schnellcheck-nav .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+@media (max-width: 520px) { .schnellcheck-form .chips--grid { grid-template-columns: 1fr; } }
 
 /* Testimonials */
 .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }

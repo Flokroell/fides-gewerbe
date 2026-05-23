@@ -185,23 +185,90 @@ function ServiceCard({ href, icon, title, body }) {
   );
 }
 
-/* ---------- Schnellcheck Section (Tally embed) ---------- */
+/* ---------- Schnellcheck Section (native form) ---------- */
 function SchnellcheckSection({ id = "schnellcheck", compact = false }) {
-  useEffect(() => {
-    const ensureTally = () => {
-      if (window.Tally && typeof window.Tally.loadEmbeds === "function") {
-        window.Tally.loadEmbeds();
-        return;
-      }
-      if (document.querySelector('script[src="https://tally.so/widgets/embed.js"]')) return;
-      const s = document.createElement("script");
-      s.src = "https://tally.so/widgets/embed.js";
-      s.async = true;
-      s.onload = () => window.Tally && window.Tally.loadEmbeds && window.Tally.loadEmbeds();
-      document.body.appendChild(s);
-    };
-    ensureTally();
-  }, []);
+  const [step, setStep] = useState(0);
+  const [sending, setSending] = useState(false);
+  const [done, setDone] = useState(false);
+  const [form, setForm] = useState({
+    name: "", email: "", phone: "",
+    typ: "", mitarbeiter: "", situation: "", dringlichkeit: "",
+    details: "", rueckruf: ""
+  });
+
+  const set = (k, v) => setForm(prev => ({ ...prev, [k]: v }));
+
+  const steps = [
+    { title: "Kontaktdaten", fields: ["name", "email", "phone", "typ"] },
+    { title: "Ihr Betrieb", fields: ["mitarbeiter", "situation", "dringlichkeit"] },
+    { title: "Details", fields: ["details", "rueckruf"] },
+  ];
+
+  const canNext = () => {
+    if (step === 0) return form.name && form.email;
+    return true;
+  };
+
+  const submit = async () => {
+    setSending(true);
+    try {
+      await fetch("https://n8n.kroellconsulting.de/webhook/fides-triage", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          eventType: "FORM_RESPONSE",
+          formId: "pbJkvB",
+          formName: "Fides Gewerbe-Schnellcheck",
+          createdAt: new Date().toISOString(),
+          data: { fields: [
+            { key: "question_name", label: "Ihr Name", type: "INPUT_TEXT", value: form.name },
+            { key: "question_email", label: "E-Mail-Adresse", type: "INPUT_EMAIL", value: form.email },
+            { key: "question_phone", label: "Telefon", type: "INPUT_PHONE_NUMBER", value: form.phone },
+            { key: "question_unternehmenstyp", label: "Unternehmenstyp", type: "MULTIPLE_CHOICE", value: form.typ },
+            { key: "question_mitarbeiter", label: "Mitarbeiterzahl", type: "MULTIPLE_CHOICE", value: form.mitarbeiter },
+            { key: "question_situation", label: "Aktuelle Versicherungssituation", type: "MULTIPLE_CHOICE", value: form.situation },
+            { key: "question_dringlichkeit", label: "Dringlichkeit", type: "MULTIPLE_CHOICE", value: form.dringlichkeit },
+            { key: "question_details", label: "Worum geht es konkret?", type: "TEXTAREA", value: form.details },
+            { key: "question_rueckruf", label: "Bevorzugte Rückrufzeit", type: "INPUT_TEXT", value: form.rueckruf },
+          ]}
+        })
+      });
+      setDone(true);
+    } catch (e) {
+      alert("Fehler beim Senden. Bitte versuchen Sie es erneut.");
+    }
+    setSending(false);
+  };
+
+  const Chip = ({ label, field }) => (
+    <button type="button" className={"chip" + (form[field] === label ? " active" : "")}
+      onClick={() => set(field, label)}>{label}</button>
+  );
+
+  if (done) {
+    return (
+      <section id={id} className="section schnellcheck">
+        <div className="container">
+          <div className="schnellcheck__grid">
+            <div>
+              <span className="eyebrow">Gewerbe-Schnellcheck</span>
+              <h2 style={{textWrap: "balance"}}>In 60 Sekunden zur passenden Absicherung.</h2>
+              <p className="muted" style={{fontSize: "1.0625rem", maxWidth: 480}}>
+                Beantworten Sie wenige kurze Fragen. Wir vergleichen anschließend
+                den gesamten Markt und melden uns mit konkreten Empfehlungen –
+                persönlich, telefonisch, ohne Verkaufsdruck.
+              </p>
+            </div>
+            <div className="schnellcheck-form" style={{textAlign: "center", padding: "48px 24px"}}>
+              <Icon path={I.check} size={48} strokeWidth={1.5} style={{color: "var(--green-text)", marginBottom: 16}}/>
+              <h3 style={{marginBottom: 8}}>Vielen Dank!</h3>
+              <p className="muted">Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id={id} className="section schnellcheck">
@@ -240,17 +307,85 @@ function SchnellcheckSection({ id = "schnellcheck", compact = false }) {
             </ul>
           </div>
 
-          <div className="tally-host" aria-label="Gewerbe-Schnellcheck Formular">
-            <iframe
-              data-tally-src="https://tally.so/embed/pbJkvB?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-              loading="lazy"
-              width="100%"
-              height="760"
-              frameBorder={0}
-              marginHeight={0}
-              marginWidth={0}
-              title="Gewerbe-Schnellcheck"
-            />
+          <div className="schnellcheck-form">
+            <div className="progress">
+              {steps.map((_, i) => <span key={i} className={i <= step ? "active" : ""}/>)}
+            </div>
+
+            {step === 0 && <>
+              <div className="field">
+                <label>Ihr Name *</label>
+                <input type="text" placeholder="Vor- und Nachname" value={form.name}
+                  onChange={e => set("name", e.target.value)}/>
+              </div>
+              <div className="field">
+                <label>E-Mail-Adresse *</label>
+                <input type="email" placeholder="ihre.adresse@firma.de" value={form.email}
+                  onChange={e => set("email", e.target.value)}/>
+              </div>
+              <div className="field">
+                <label>Telefon (optional)</label>
+                <input type="tel" placeholder="+49 ..." value={form.phone}
+                  onChange={e => set("phone", e.target.value)}/>
+              </div>
+              <div className="field">
+                <label>Unternehmenstyp</label>
+                <div className="chips chips--grid">
+                  {["Handwerk","Gastronomie","Dienstleister","Einzelhandel","Sonstiges"].map(o =>
+                    <Chip key={o} label={o} field="typ"/>
+                  )}
+                </div>
+              </div>
+            </>}
+
+            {step === 1 && <>
+              <div className="field">
+                <label>Mitarbeiterzahl</label>
+                <div className="chips chips--grid">
+                  {["Solo","2–5","6–20","20+"].map(o =>
+                    <Chip key={o} label={o} field="mitarbeiter"/>
+                  )}
+                </div>
+              </div>
+              <div className="field">
+                <label>Aktuelle Versicherungssituation</label>
+                <div className="chips chips--grid">
+                  {["Keine","Teilweise","Überprüfungsbedürftig","Nur Vergleich"].map(o =>
+                    <Chip key={o} label={o} field="situation"/>
+                  )}
+                </div>
+              </div>
+              <div className="field">
+                <label>Dringlichkeit</label>
+                <div className="chips chips--grid">
+                  {["Informiere mich nur","Hole Angebote ein","Dringender Bedarf"].map(o =>
+                    <Chip key={o} label={o} field="dringlichkeit"/>
+                  )}
+                </div>
+              </div>
+            </>}
+
+            {step === 2 && <>
+              <div className="field">
+                <label>Worum geht es konkret? (optional)</label>
+                <textarea rows={3} placeholder="1–3 Sätze zu Ihrem Anliegen ..."
+                  value={form.details} onChange={e => set("details", e.target.value)}/>
+              </div>
+              <div className="field">
+                <label>Bevorzugte Rückrufzeit</label>
+                <input type="text" placeholder="z.B. Di + Do nachmittags" value={form.rueckruf}
+                  onChange={e => set("rueckruf", e.target.value)}/>
+              </div>
+            </>}
+
+            <div className="schnellcheck-nav">
+              {step > 0 && <button type="button" className="btn btn--outline" onClick={() => setStep(s => s - 1)}>Zurück</button>}
+              {step < 2 && <button type="button" className="btn btn--primary" disabled={!canNext()}
+                onClick={() => setStep(s => s + 1)}>Weiter</button>}
+              {step === 2 && <button type="button" className="btn btn--primary" disabled={sending}
+                onClick={submit}>{sending ? "Wird gesendet..." : "Absenden"}</button>}
+            </div>
+            <p className="submit-note">Kostenlos & unverbindlich. Ihre Daten werden ausschließlich für die Kontaktaufnahme verwendet.</p>
           </div>
         </div>
       </div>
