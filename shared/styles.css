@@ -312,7 +312,7 @@ a:hover { color: var(--green-hover); text-decoration: underline; text-decoration
   .trustbar__row { gap: 16px 24px; }
   .trustbar__item { font-size: 0.875rem; }
   .site-header__inner { height: 68px; }
-  .brand__logo { height: 34px; }
+  .brand__logo { height: 44px; }
 }
 
 /* Smaller hero variants for inner pages */
@@ -379,7 +379,7 @@ a:hover { color: var(--green-hover); text-decoration: underline; text-decoration
   text-decoration: none; color: var(--green-text);
 }
 .brand:hover { color: var(--green-hover); text-decoration: none; }
-.brand__logo { display: block; height: 42px; width: auto; }
+.brand__logo { display: block; height: 56px; width: auto; }
 .brand__sub {
   font-family: "Source Sans Pro", sans-serif; font-weight: 600;
   font-size: 0.6875rem; letter-spacing: 0.18em; text-transform: uppercase;
