@@ -60,7 +60,7 @@ function Header({ active }) {
     <header className="site-header">
       <div className="container site-header__inner">
         <a href="index.html" className="brand">
-          <img src="shared/fides-logo.svg" alt="fides" className="brand__logo" width="210" height="42"/>
+          <img src="shared/img/fides-logo.png" alt="fides" className="brand__logo"/>
           <span className="brand__sub">Gewerbe</span>
         </a>
 
