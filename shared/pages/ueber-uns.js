@@ -66,7 +66,7 @@ function Page() {
     }
   }, "Versicherungsmakler aus \xDCberzeugung \u2013 im Pfaffenwinkel zu Hause."), /*#__PURE__*/React.createElement("p", {
     className: "lead"
-  }, "fides ist ein inhabergef\xFChrtes Maklerb\xFCro in Schongau. Wir betreuen Handwerk, Gastronomie, Dienstleister und Einzelhandel in Bayern \u2013 unabh\xE4ngig, langfristig und mit einem Team, das sowohl die Region als auch den Versicherungsmarkt seit Jahren kennt."))), /*#__PURE__*/React.createElement("section", {
+  }, "fides ist ein inhabergef\xFChrtes Maklerb\xFCro in Schongau. Wir betreuen Handwerk, Gastronomie, Dienstleister und Einzelhandel in Bayern \u2013 persönlich, langfristig und mit einem Team, das sowohl die Region als auch den Versicherungsmarkt seit Jahren kennt."))), /*#__PURE__*/React.createElement("section", {
     className: "section"
   }, /*#__PURE__*/React.createElement("div", {
     className: "container"

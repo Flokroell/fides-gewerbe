@@ -104,7 +104,7 @@ function Footer() {
           <div>
             <div className="footer-brand">fides<span className="footer-brand__sub">Gewerbe</span></div>
             <p style={{color: "rgba(255,255,255,0.7)", marginBottom: 12}}>
-              Unabhängiger Versicherungsmakler für Gewerbekunden in Schongau und Landsberg am Lech.
+              Versicherungsmakler für Gewerbekunden in Schongau und Landsberg am Lech.
             </p>
             <p style={{color: "rgba(255,255,255,0.7)", fontSize: "0.875rem", margin: 0}}>
               Privatkunden: <a href="https://fides-finanz.de" target="_blank" rel="noopener">fides-finanz.de</a>
@@ -293,8 +293,8 @@ function SchnellcheckSection({ id = "schnellcheck", compact = false }) {
               <li>
                 <Icon path={I.shield} strokeWidth={1.8}/>
                 <div>
-                  <strong>Unabhängig, nicht provisionsgetrieben</strong>
-                  <span>Als freier Gewerbemakler agieren wir unabhängig von Gesellschaftsinteressen und vertreten ausschließlich Ihre.</span>
+                  <strong>Ihr Interesse zuerst</strong>
+                  <span>Als freier Gewerbemakler agieren wir frei von Gesellschaftsinteressen und vertreten ausschließlich Ihre.</span>
                 </div>
               </li>
               <li>

@@ -19,7 +19,7 @@ function Hero() {
     className: "hero__copy"
   }, /*#__PURE__*/React.createElement("div", {
     className: "hero__tag"
-  }, "UNABH\xC4NGIG \xB7 LOKAL \xB7 GANZHEITLICH"), /*#__PURE__*/React.createElement("h1", null, "Ihr Versicherungs\xADmakler f\xFCr Gewerbe \u2013 f\xFCr alle, die ihr ", /*#__PURE__*/React.createElement("span", {
+  }, "LOKAL \xB7 PERS\xD6NLICH \xB7 GANZHEITLICH"), /*#__PURE__*/React.createElement("h1", null, "Ihr Versicherungs\xADmakler f\xFCr Gewerbe \u2013 f\xFCr alle, die ihr ", /*#__PURE__*/React.createElement("span", {
     className: "accent"
   }, "Unternehmen lieben"), "."), /*#__PURE__*/React.createElement("p", {
     className: "lead"
@@ -61,7 +61,7 @@ function Hero() {
     className: "num"
   }, "100%"), /*#__PURE__*/React.createElement("div", {
     className: "label"
-  }, "Unabh\xE4ngig")))));
+  }, "Ihr Makler")))));
 }
 function Engagement() {
   return /*#__PURE__*/React.createElement("section", {
@@ -86,7 +86,7 @@ function Engagement() {
     style: {
       margin: 0
     }
-  }, "Als freier Gewerbemakler agieren wir unabh\xE4ngig von Gesellschafts\xADinteressen. Jeder Kunde erh\xE4lt eine flexibel auf seine Bed\xFCrfnisse zugeschnittene Risikol\xF6sung.")), /*#__PURE__*/React.createElement("div", {
+  }, "Als freier Gewerbemakler agieren wir frei von Gesellschafts\xADinteressen. Jeder Kunde erh\xE4lt eine flexibel auf seine Bed\xFCrfnisse zugeschnittene Risikol\xF6sung.")), /*#__PURE__*/React.createElement("div", {
     className: "card why"
   }, /*#__PURE__*/React.createElement("span", {
     className: "ico-wrap"
@@ -220,7 +220,7 @@ function TeamTeaser() {
   }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement(Icon, {
     path: I.check,
     strokeWidth: 2
-  }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("strong", null, "Unabh\xE4ngig als Makler"), /*#__PURE__*/React.createElement("span", null, "Vergleich aller relevanten Versicherer am deutschen Markt."))), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement(Icon, {
+  }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("strong", null, "Ihr Makler"), /*#__PURE__*/React.createElement("span", null, "Vergleich aller relevanten Versicherer am deutschen Markt."))), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement(Icon, {
     path: I.check,
     strokeWidth: 2
   }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("strong", null, "Pers\xF6nlicher Ansprechpartner"), /*#__PURE__*/React.createElement("span", null, "Vom Erstgespr\xE4ch \xFCber die Police bis zur Schadenmeldung."))), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement(Icon, {
